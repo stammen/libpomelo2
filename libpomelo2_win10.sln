@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libpomelo2", "libpomelo2_win10.vcxproj", "{6B00AB87-5D71-4F3C-A3D2-7A5FBE086BA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "(deps)", "(deps)", "{6F380681-E848-42F3-A040-164E6241F50D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "(uv)", "(uv)", "{764377FD-0946-4CC1-A8DB-82F78B1B5834}"
+	ProjectSection(SolutionItems) = preProject
+		deps\uv\include\uv.h = deps\uv\include\uv.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "openssl", "openssl", "{CEB70668-D0D6-44AC-864D-54982101318B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{96148784-E5AD-464D-8AB9-EA7C6A4569E4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tr_winrt_tcp", "tr_winrt_tcp\tr_winrt_tcp.vcxproj", "{3FE2F5D9-C447-4540-B476-1A3FC37C4BF8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B00AB87-5D71-4F3C-A3D2-7A5FBE086BA0}.Debug|ARM.ActiveCfg = Debug|ARM
+		{6B00AB87-5D71-4F3C-A3D2-7A5FBE086BA0}.Debug|ARM.Build.0 = Debug|ARM
+		{6B00AB87-5D71-4F3C-A3D2-7A5FBE086BA0}.Debug|x64.ActiveCfg = Debug|x64
+		{6B00AB87-5D71-4F3C-A3D2-7A5FBE086BA0}.Debug|x64.Build.0 = Debug|x64
+		{6B00AB87-5D71-4F3C-A3D2-7A5FBE086BA0}.Debug|x86.ActiveCfg = Debug|Win32
+		{6B00AB87-5D71-4F3C-A3D2-7A5FBE086BA0}.Debug|x86.Build.0 = Debug|Win32
+		{6B00AB87-5D71-4F3C-A3D2-7A5FBE086BA0}.Release|ARM.ActiveCfg = Release|ARM
+		{6B00AB87-5D71-4F3C-A3D2-7A5FBE086BA0}.Release|ARM.Build.0 = Release|ARM
+		{6B00AB87-5D71-4F3C-A3D2-7A5FBE086BA0}.Release|x64.ActiveCfg = Release|x64
+		{6B00AB87-5D71-4F3C-A3D2-7A5FBE086BA0}.Release|x64.Build.0 = Release|x64
+		{6B00AB87-5D71-4F3C-A3D2-7A5FBE086BA0}.Release|x86.ActiveCfg = Release|Win32
+		{6B00AB87-5D71-4F3C-A3D2-7A5FBE086BA0}.Release|x86.Build.0 = Release|Win32
+		{3FE2F5D9-C447-4540-B476-1A3FC37C4BF8}.Debug|ARM.ActiveCfg = Debug|ARM
+		{3FE2F5D9-C447-4540-B476-1A3FC37C4BF8}.Debug|ARM.Build.0 = Debug|ARM
+		{3FE2F5D9-C447-4540-B476-1A3FC37C4BF8}.Debug|ARM.Deploy.0 = Debug|ARM
+		{3FE2F5D9-C447-4540-B476-1A3FC37C4BF8}.Debug|x64.ActiveCfg = Debug|x64
+		{3FE2F5D9-C447-4540-B476-1A3FC37C4BF8}.Debug|x64.Build.0 = Debug|x64
+		{3FE2F5D9-C447-4540-B476-1A3FC37C4BF8}.Debug|x64.Deploy.0 = Debug|x64
+		{3FE2F5D9-C447-4540-B476-1A3FC37C4BF8}.Debug|x86.ActiveCfg = Debug|Win32
+		{3FE2F5D9-C447-4540-B476-1A3FC37C4BF8}.Debug|x86.Build.0 = Debug|Win32
+		{3FE2F5D9-C447-4540-B476-1A3FC37C4BF8}.Debug|x86.Deploy.0 = Debug|Win32
+		{3FE2F5D9-C447-4540-B476-1A3FC37C4BF8}.Release|ARM.ActiveCfg = Release|ARM
+		{3FE2F5D9-C447-4540-B476-1A3FC37C4BF8}.Release|ARM.Build.0 = Release|ARM
+		{3FE2F5D9-C447-4540-B476-1A3FC37C4BF8}.Release|ARM.Deploy.0 = Release|ARM
+		{3FE2F5D9-C447-4540-B476-1A3FC37C4BF8}.Release|x64.ActiveCfg = Release|x64
+		{3FE2F5D9-C447-4540-B476-1A3FC37C4BF8}.Release|x64.Build.0 = Release|x64
+		{3FE2F5D9-C447-4540-B476-1A3FC37C4BF8}.Release|x64.Deploy.0 = Release|x64
+		{3FE2F5D9-C447-4540-B476-1A3FC37C4BF8}.Release|x86.ActiveCfg = Release|Win32
+		{3FE2F5D9-C447-4540-B476-1A3FC37C4BF8}.Release|x86.Build.0 = Release|Win32
+		{3FE2F5D9-C447-4540-B476-1A3FC37C4BF8}.Release|x86.Deploy.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{764377FD-0946-4CC1-A8DB-82F78B1B5834} = {6F380681-E848-42F3-A040-164E6241F50D}
+		{CEB70668-D0D6-44AC-864D-54982101318B} = {6F380681-E848-42F3-A040-164E6241F50D}
+	EndGlobalSection
+EndGlobal

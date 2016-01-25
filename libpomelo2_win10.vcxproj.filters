@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{cdfaa9d2-ce72-431a-8156-836fc7ebea1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\tr">
+      <UniqueIdentifier>{aa5fb5e6-1545-47aa-9d4f-de9d72dbe94d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\tr\dummy">
+      <UniqueIdentifier>{138adb51-4027-4e32-8085-79cae5f084aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{9f557f40-cf7b-4d2e-b604-0bc10bbb7d48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\tr\winrt">
+      <UniqueIdentifier>{94162330-d805-4143-9507-998d7e23b0fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\tr\uv">
+      <UniqueIdentifier>{13e11087-d474-4ace-ac70-0932d97dea5d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\pc_JSON.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pc_lib.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pc_pomelo.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pc_trans.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pc_trans_repo.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tr\dummy\tr_dummy.c">
+      <Filter>src\tr\dummy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tr\uv\pb_decode.c">
+      <Filter>src\tr\uv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tr\uv\pb_encode.c">
+      <Filter>src\tr\uv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tr\uv\pb_i.c">
+      <Filter>src\tr\uv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tr\uv\pr_msg.c">
+      <Filter>src\tr\uv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tr\uv\pr_msg_json.c">
+      <Filter>src\tr\uv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tr\uv\pr_msg_pb.c">
+      <Filter>src\tr\uv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tr\uv\pr_pkg.c">
+      <Filter>src\tr\uv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tr\winrt\tr_winrt.cpp">
+      <Filter>src\tr\winrt</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\pc_JSON.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pc_lib.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pc_mutex.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pc_pomelo_i.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pc_trans_repo.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\queue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tr\dummy\tr_dummy.h">
+      <Filter>src\tr\dummy</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pomelo.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pomelo_trans.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tr\uv\pb.h">
+      <Filter>src\tr\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tr\uv\pr_msg.h">
+      <Filter>src\tr\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tr\uv\pr_pkg.h">
+      <Filter>src\tr\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tr\winrt\tr_winrt.h">
+      <Filter>src\tr\winrt</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

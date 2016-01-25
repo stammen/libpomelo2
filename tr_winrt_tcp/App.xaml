@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="tr_winrt_tcp.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:tr_winrt_tcp"
+    RequestedTheme="Light">
+
+</Application>
