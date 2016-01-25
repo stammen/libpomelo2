@@ -14,9 +14,19 @@
 #define PC_INLINE inline
 #endif
 
-extern void (*pc_lib_log)(int level, const char* msg, ...);
-extern void* (*pc_lib_malloc)(size_t len);
-extern void (*pc_lib_free)(void* data);
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+    extern void(*pc_lib_log)(int level, const char* msg, ...);
+
+    extern void* (*pc_lib_malloc)(size_t len);
+    extern void(*pc_lib_free)(void* data);
+
+#ifdef __cplusplus
+}
+#endif
+
 extern const char* pc_lib_platform_type;
 
 const char* pc_lib_strdup(const char* str);

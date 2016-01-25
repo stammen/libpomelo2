@@ -12,6 +12,10 @@
 
 #include "test.h"
 
+#ifdef WINRT
+#include "test-tr_tcp.h"
+#endif
+
 static pc_client_t* client;
 
 #define REQ_ROUTE "connector.entryHandler.entry"
@@ -110,9 +114,18 @@ static void notify_cb(const pc_notify_t* noti, int rc)
     PC_TEST_ASSERT(pc_notify_timeout(noti) == NOTI_TIMEOUT);
 }
 
+#ifndef WINRT
 int main()
+#else
+int dotest()
+#endif
 {
     pc_client_config_t config = PC_CLIENT_CONFIG_DEFAULT;
+
+#ifdef WINRT
+    config.transport_name = PC_TR_NAME_WINRT_TCP;
+#endif
+
     int handler_id;
     pc_lib_init(NULL, NULL, NULL, NULL);
 

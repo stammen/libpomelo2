@@ -11,7 +11,9 @@
 #include "pr_pkg.h"
 #include <pc_JSON.h>
 
-typedef struct tr_uv_tcp_transport_s tr_uv_tcp_transport_t;
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 typedef struct {
     unsigned int id;
@@ -19,8 +21,8 @@ typedef struct {
     const char* msg;
 } pc_msg_t;
 
-uv_buf_t pr_default_msg_encoder(tr_uv_tcp_transport_t* tt, const pc_msg_t* msg);
-pc_msg_t pr_default_msg_decoder(tr_uv_tcp_transport_t* tt, const uv_buf_t* buf);
+uv_buf_t pr_default_msg_encoder(const pc_JSON* route2code, const pc_JSON* client_protos, const pc_msg_t* msg);
+pc_msg_t pr_default_msg_decoder(const pc_JSON* route2code, const pc_JSON* client_protos, const uv_buf_t* buf);
 
 /**
  * internal use
@@ -38,7 +40,11 @@ pc_JSON* pc_body_json_decode(const char *data, size_t offset, size_t len);
 
 pc_buf_t pc_body_pb_encode(const pc_JSON*msg, const pc_JSON* gprotos, const pc_JSON* pb_def);
 pc_JSON* pc_body_pb_decode(const char* data, size_t offset, size_t len,
-                      const pc_JSON* gprotos, const pc_JSON* pb_def);
+    const pc_JSON* gprotos, const pc_JSON* pb_def);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
 

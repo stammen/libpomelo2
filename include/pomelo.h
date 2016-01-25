@@ -91,6 +91,7 @@ typedef struct pc_notify_s pc_notify_t;
  */
 #define PC_TR_NAME_UV_TCP 0
 #define PC_TR_NAME_UV_TLS 1
+#define PC_TR_NAME_WINRT_TCP 2
 #define PC_TR_NAME_DUMMY 7
 
 /**

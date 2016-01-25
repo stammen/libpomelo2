@@ -9,7 +9,14 @@
 #include <stddef.h>
 #include <stdint.h>
 
+#ifndef WINRT
 #include <uv.h>
+#else
+typedef struct uv_buf_t {
+    unsigned long len;
+    char* base;
+} uv_buf_t;
+#endif
 
 /**
  * Pomelo package format:
@@ -73,10 +80,18 @@ typedef struct {
     pc_pkg_parser_state state;
 } pc_pkg_parser_t;
 
-void pc_pkg_parser_init(pc_pkg_parser_t *parser, pc_on_pkg_handler_t handler, void* ex_data);
-void pc_pkg_parser_reset(pc_pkg_parser_t *parser);
-void pc_pkg_parser_feed(pc_pkg_parser_t* parser, const char* data, size_t len);
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-uv_buf_t pc_pkg_encode(pc_pkg_type type, const char *data, size_t len);
+    void pc_pkg_parser_init(pc_pkg_parser_t *parser, pc_on_pkg_handler_t handler, void* ex_data);
+    void pc_pkg_parser_reset(pc_pkg_parser_t *parser);
+    void pc_pkg_parser_feed(pc_pkg_parser_t* parser, const char* data, size_t len);
+
+    uv_buf_t pc_pkg_encode(pc_pkg_type type, const char *data, size_t len);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

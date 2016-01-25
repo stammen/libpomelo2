@@ -11,7 +11,11 @@
 #include <pc_lib.h>
 
 #include "pr_msg.h"
+#ifndef WINRT
 #include "tr_uv_tcp_i.h"
+#else
+#include "tr_winrt.h"
+#endif
 
 #define PC_MSG_FLAG_BYTES 1
 #define PC_MSG_ROUTE_LEN_BYTES 1
@@ -472,22 +476,24 @@ pc_buf_t pc_default_msg_encode(const pc_JSON* route2code, const pc_JSON* client_
 }
 
 /* for transport plugin */
-uv_buf_t pr_default_msg_encoder(tr_uv_tcp_transport_t* tt, const pc_msg_t* msg)
+uv_buf_t pr_default_msg_encoder(const pc_JSON* route2code, const pc_JSON* client_protos, const pc_msg_t* msg)
 {
     pc_buf_t pb;
     uv_buf_t ub;
 
-    pb = pc_default_msg_encode(tt->route_to_code, tt->client_protos, msg);
+    pb = pc_default_msg_encode(route2code, client_protos, msg);
+    //pb = pc_default_msg_encode(tt->route_to_code, tt->client_protos, msg);
     ub.base = pb.base;
     ub.len = pb.len;
     return ub;
 }
 
-pc_msg_t pr_default_msg_decoder(tr_uv_tcp_transport_t* tt, const uv_buf_t* buf)
+pc_msg_t pr_default_msg_decoder(const pc_JSON* route2code, const pc_JSON* client_protos, const uv_buf_t* buf)
 {
     pc_buf_t pb;
     pb.base = buf->base;
     pb.len = buf->len;
 
-    return pc_default_msg_decode(tt->code_to_route, tt->server_protos, &pb);
+    return pc_default_msg_decode(route2code, client_protos, &pb);
+    //return pc_default_msg_decode(tt->code_to_route, tt->server_protos, &pb);
 }

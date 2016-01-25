@@ -63,6 +63,8 @@ typedef enum {
     TR_UV_TCP_DONE
 } tr_uv_tcp_state_t;
 
+typedef struct tr_uv_tcp_transport_s tr_uv_tcp_transport_t;
+
 struct tr_uv_tcp_transport_s {
     pc_transport_t base;
 
@@ -144,8 +146,8 @@ struct tr_uv_tcp_transport_s {
 typedef struct {
     pc_transport_plugin_t base;
 
-    uv_buf_t (*pr_msg_encoder)(tr_uv_tcp_transport_t* trans, const pc_msg_t* msg);
-    pc_msg_t (*pr_msg_decoder)(tr_uv_tcp_transport_t* trans, const uv_buf_t* buf);
+    uv_buf_t (*pr_msg_encoder)(const pc_JSON *, const pc_JSON *, const pc_msg_t* msg);
+    pc_msg_t (*pr_msg_decoder)(const pc_JSON *, const pc_JSON *, const uv_buf_t* buf);
 } tr_uv_tcp_transport_plugin_t;
 
 pc_transport_t* tr_uv_tcp_create(pc_transport_plugin_t* plugin);

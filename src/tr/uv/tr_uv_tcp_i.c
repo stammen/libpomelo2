@@ -349,7 +349,7 @@ int tr_uv_tcp_send(pc_transport_t* trans, const char* route, unsigned int seq_nu
     m.msg = msg;
     m.route = route;
 
-    buf = ((tr_uv_tcp_transport_plugin_t*)tr_uv_tcp_plugin((pc_transport_t*)tt))->pr_msg_encoder(tt, &m);
+    buf = ((tr_uv_tcp_transport_plugin_t*)tr_uv_tcp_plugin((pc_transport_t*)tt))->pr_msg_encoder(tt->code_to_route, tt->client_protos, &m);
     if (buf.len == (unsigned int)-1) {
         pc_lib_log(PC_LOG_ERROR, "tr_uv_tcp_send - encode msg failed, msg: %s, route: %s", msg, route);
         return PC_RC_ERROR;

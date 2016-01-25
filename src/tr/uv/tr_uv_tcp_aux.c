@@ -857,7 +857,7 @@ void tcp__on_data_recieved(tr_uv_tcp_transport_t* tt, const char* data, size_t l
     buf.base = (char* )data;
     buf.len = len;
 
-    msg = plugin->pr_msg_decoder(tt, &buf);
+    msg = plugin->pr_msg_decoder(tt->code_to_route, tt->client_protos,&buf);
 
     if (msg.id == PC_INVALID_REQ_ID || !msg.msg) {
         pc_lib_log(PC_LOG_ERROR, "tcp__on_data_recieved - decode error, will reconn");

@@ -19,6 +19,10 @@
 #  include "tr/dummy/tr_dummy.h"
 #endif
 
+#if !defined(PC_NO_WINRT_TRANS)
+#  include "tr/winrt/tr_winrt.h"
+#endif
+
 #if !defined(PC_NO_UV_TCP_TRANS)
 #  include "tr/uv/tr_uv_tcp.h"
 
@@ -29,8 +33,8 @@
 #endif /* tcp */
 
 void (*pc_lib_log)(int level, const char* msg, ...) = NULL;
+void(*pc_lib_free)(void* data) = NULL;
 void* (*pc_lib_malloc)(size_t len) = NULL;
-void (*pc_lib_free)(void* data) = NULL;
 
 const char* pc_lib_platform_type = NULL;
 
@@ -108,14 +112,21 @@ void pc_lib_init(void (*pc_log)(int level, const char* msg, ...), void* (*pc_all
     tp = pc_tr_uv_tcp_trans_plugin();
     pc_transport_plugin_register(tp);
     pc_lib_log(PC_LOG_INFO, "pc_lib_init - register tcp plugin");
+
 #if !defined(PC_NO_UV_TLS_TRANS)
     tp = pc_tr_uv_tls_trans_plugin();
     pc_transport_plugin_register(tp);
     pc_lib_log(PC_LOG_INFO, "pc_lib_init - register tls plugin");
 #endif
+#endif
+
+#if !defined(PC_NO_WINRT_TRANS)
+    tp = pc_tr_winrt_trans_plugin();
+    pc_transport_plugin_register(tp);
+    pc_lib_log(PC_LOG_INFO, "pc_lib_init - register winrt plugin");
+#endif
     srand((unsigned int)time(0));
 
-#endif
 }
 
 void pc_lib_cleanup()
@@ -135,6 +146,13 @@ void pc_lib_cleanup()
 #endif
 
 #endif
+
+#if !defined(PC_NO_WINRT_TRANS)
+    pc_transport_plugin_deregister(PC_TR_NAME_WINRT_TCP);
+    pc_lib_log(PC_LOG_INFO, "pc_lib_init - deregister winrt plugin");
+#endif
+
+
     pc_lib_free((char*)pc_lib_platform_type);
 }
 
