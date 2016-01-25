@@ -68,7 +68,7 @@ static int winrt_connect(pc_transport_t* trans, const char* host, int port, cons
     assert(tr);
 
 
-#if 0
+#if 1
     std::string url("ws://");
     url += host;
     url += ":";
